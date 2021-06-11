@@ -207,7 +207,7 @@ const applyAllFilters = (products, allFilters) => {
     if (filter.filterType === "radio") {
       const data = products.map(product => {
         for (const [objectKey, objectValue] of Object.entries(product)) {
-          if (filter.value === objectValue) {
+          if (filter.key === objectKey && filter.value === objectValue) {
             return product;
           }
         }
@@ -223,7 +223,7 @@ const applyAllFilters = (products, allFilters) => {
     if (filter.filterType === "dropdown") {
       const data = products.map(product => {
         for (const [objectKey, objectValue] of Object.entries(product)) {
-          if (filter.value === objectValue) {
+          if (filter.key === objectKey && filter.value === objectValue) {
             return product;
           }
         }
